@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>KI-basierte Schmerzberatung</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>KI-basierte Schmerzberatung</h1>
+    <h1 id = "title">KI-basierte Schmerzberatung</h1>
 
   <div id="bild-container">
     <img id="bild-mann" src="Mann.jpg" alt="Bild eines Mannes" style="display: none;">
@@ -47,16 +47,18 @@
   </div>
 
     <form method="post" action ="geminiai.php">   
-        <label for="geschlecht">Wähle dein Geschlecht:</label>
+        <label for="geschlecht">Wählen Sie Ihr Geschlecht:</label>
         <select id="geschlecht" name="geschlecht">
             <option value="">Bitte wählen</option>
             <option value="mann">Mann</option>
             <option value="frau">Frau</option>
         </select>
-        <br><br><label for="prompt">Anmerkungen:</label><br>
-        <textarea class = "textarea" name="prompt" rows="6" placeholder="Geben Sie Zusatzinformationen an, wenn nötig..."><?php echo isset($_POST['prompt']) ? htmlspecialchars($_POST['prompt']) : ''; ?></textarea><br>
+        <br><br>
+        <label for="alter">Alter:</label>
+        <input type="number" id="alter" name="alter" min="0" max="150">
+        <br><br>
         <div class="checkbox-group">
-            <strong>Wo haben Sie Schmerzen? (Mehrere Auswahl möglich)</strong><br>
+            <strong id = "checkbox-title">Wo haben Sie Schmerzen? (Mehrere Auswahl möglich)</strong><br><br>
             <label><input type="checkbox" name="body_parts[]" value="Kopf"> Kopf</label>
             <label><input type="checkbox" name="body_parts[]" value="Hals"> Hals</label>
             <label><input type="checkbox" name="body_parts[]" value="Nacken"> Nacken</label>
@@ -68,6 +70,8 @@
             <label><input type="checkbox" name="body_parts[]" value="Knie"> Knie</label>
             <label><input type="checkbox" name="body_parts[]" value="Fuß"> Fuß</label>
         </div>
+        <label for="prompt">Anmerkungen:</label><br>
+        <textarea class = "textarea" name="prompt" rows="6" placeholder="Geben Sie, wenn nötig Zusatzinformationen an..."><?php echo isset($_POST['prompt']) ? htmlspecialchars($_POST['prompt']) : ''; ?></textarea><br>
         <input type="submit" value="Senden">
     </form>
 
