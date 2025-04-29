@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 40px;
+}
+h1 {
+    color: #333;
+}
+
+.textarea {
+    width: 600px;
+}
+.checkbox-group {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type=submit] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.antwort {
+    background: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 4px solid #0077cc;
+    white-space: pre-wrap;
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+#bild-container {
+    position: fixed; /* Feste Position relativ zum Viewport */
+    top: 40%;        /* Vertikal zentrieren (ungefähr) */
+    right: 150px;     /* Abstand vom rechten Rand */
+    transform: translateY(-50%); /* Exakte vertikale Zentrierung */
+}
+
+#bild-container img {
+    max-width: 400px;
+    height: auto;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.0) 70%);
+    border-radius: 50%;
+    opacity: 0; /* Unsichtbar am Anfang */
+    transition: opacity 0.4s, transform 0.4s;
+    transform: scale(1);
+    pointer-events: none;
+}
+
+.marker.active {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+#marker-nacken-mann {
+    width: 60px;
+    height: 15px;
+    background: radial-gradient(ellipse, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.0) 70%);
+}
+
+#marker-ruecken-mann {
+    width: 26px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.0) 70%);
+}
+
+#marker-nacken-frau {
+    width: 60px;
+    height: 16px;
+    background: radial-gradient(ellipse, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.0) 70%);
+}
+
+#marker-ruecken-frau {
+    width: 26px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.0) 70%);
+}
