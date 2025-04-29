@@ -2,6 +2,7 @@
 $responseText = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['body_parts']) && !empty($_POST['body_parts'])) {
     $selectedParts = $_POST['body_parts'];
+    $age = $_POST['alter'];
     $anfrage = $_POST['prompt'];
     $geschlecht = $_POST['geschlecht'];
     $api_key = 'AIzaSyBN4_p0e0WUjW9W9prLFce-r3tBz8c96Ak';
@@ -10,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['body_parts']) && !empt
 
     // **Angepasster Prompt, um nach Ratschlägen zu fragen:**
     $painDescription = "Ich habe Schmerzen in folgenden Körperteilen: " . implode(", ", $selectedParts) . ". Was kann ich dagegen tun, halte dich kurz. Sag mir nicht das du kein Arzt bist.";
-    $fullPain = $anfrage . " \n " . $painDescription . "\nIch bin ein/e". $geschlecht;
+    $fullPain = $anfrage . " \n " . $painDescription . "\nIch bin ein/e". $geschlecht ."\n ich bin". $age ."Jahre alt";
     $data = [
         'contents' => [
             ['parts' => [['text' => $fullPain]]]
