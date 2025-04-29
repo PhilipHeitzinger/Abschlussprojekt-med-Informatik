@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['body_parts']) && !empt
     $selectedParts = $_POST['body_parts'];
     $anfrage = $_POST['prompt'];
     $geschlecht = $_POST['geschlecht'];
-    $api_key = 'AIzaSyAqZ0OnJ2NtpX43dYgQH-V-NclYwFujB94';
+    $api_key = 'AIzaSyBN4_p0e0WUjW9W9prLFce-r3tBz8c96Ak';
     $model = 'gemini-2.0-flash';
     $url = 'https://generativelanguage.googleapis.com/v1beta/models/' . $model . ':generateContent?key=' . $api_key;
 
